@@ -1,4 +1,4 @@
-# Chuvids [![Netlify Status](https://api.netlify.com/api/v1/badges/2028a0e8-010b-44a8-96c0-babf309532c1/deploy-status)](https://app.netlify.com/sites/haisky/deploys)
+# Chuvids [![Netlify Status](https://api.netlify.com/api/v1/badges/a6d95606-aacf-4a52-ad68-cdd9604b6059/deploy-status)](https://app.netlify.com/sites/chuvids/deploys)
 
 **Chuvids is a web application built with the React framework and Youtube API**
 
