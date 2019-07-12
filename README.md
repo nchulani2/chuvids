@@ -10,9 +10,9 @@
 
 - **Videos are displayed in a list-like format**
 
-- **Next/previous videos are accessible through the pagination buttons**_Due to max number of API calls allowed, infinite scrolling was not implemented_
+- **Next/previous videos are accessible through the pagination buttons** (_Due to max number of API calls allowed, infinite scrolling was not implemented_)
 
-- **Sticky header that has scroll display implementation**_Working with Safari/Chrome elastic scrolling_
+- **Sticky header that has scroll display implementation** (_Working with Safari/Chrome elastic scrolling_)
 
 - **SVG based preloader**
 
