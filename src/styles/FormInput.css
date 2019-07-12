@@ -1,0 +1,110 @@
+.formInput {
+  top: 0;
+  text-align: center;
+  padding: 10px 0;
+  height: 6rem;
+  width: 100%;
+  z-index: 99;
+}
+
+.formInput #formEle {
+  width: 70%;
+  -webkit-transition: all linear 0.1s;
+  transition: all linear 0.1s;
+}
+
+.formInput #formEle input {
+  border-bottom-left-radius: 80px;
+  border-top-left-radius: 80px;
+  padding: 20px;
+  background: black;
+  font-size: 20px;
+  -webkit-transition: all linear 0.1s;
+  transition: all linear 0.1s;
+  color: white;
+}
+
+.formInput #formEle input:focus {
+  background: black;
+  color: white;
+}
+
+.formInput #formEle input::-webkit-input-placeholder {
+  font-size: 20px;
+  color: white;
+}
+
+.formInput #formEle input:-ms-input-placeholder {
+  font-size: 20px;
+  color: white;
+}
+
+.formInput #formEle input::-ms-input-placeholder {
+  font-size: 20px;
+  color: white;
+}
+
+.formInput #formEle input::placeholder {
+  font-size: 20px;
+  color: white;
+}
+
+.formInput #formEle input:focus::-webkit-input-placeholder {
+  color: white;
+}
+
+.formInput #formEle input:focus:-ms-input-placeholder {
+  color: white;
+}
+
+.formInput #formEle input:focus::-ms-input-placeholder {
+  color: white;
+}
+
+.formInput #formEle input:focus::placeholder {
+  color: white;
+}
+
+.formInput #formEle #buttonEle {
+  padding-right: 20px;
+  border-top-right-radius: 80px;
+  border-bottom-right-radius: 80px;
+  background: #222222;
+  -webkit-transition: all linear 0.1s;
+  transition: all linear 0.1s;
+}
+
+.formInput #formEle #buttonEle i {
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+@media (max-width: 450px) {
+  .formInput {
+    height: 5rem;
+  }
+  .formInput #formEle {
+    height: 3.5rem;
+    -webkit-transition: all linear 0.1s;
+    transition: all linear 0.1s;
+  }
+  .formInput #formEle input {
+    padding: 15px;
+    font-size: 15px;
+    -webkit-transition: all linear 0.1s;
+    transition: all linear 0.1s;
+  }
+  .formInput #formEle #buttonEle {
+    padding-right: 20px;
+    border-top-right-radius: 80px;
+    border-bottom-right-radius: 80px;
+    background: #191919;
+    -webkit-transition: all linear 0.1s;
+    transition: all linear 0.1s;
+  }
+  .formInput #formEle #buttonEle i {
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.7);
+  }
+}
+/*# sourceMappingURL=FormInput.css.map */

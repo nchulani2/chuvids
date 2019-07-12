@@ -1,0 +1,23 @@
+.navigationalEle {
+  background: #363636;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  padding: 10px 0;
+  z-index: 99;
+  -webkit-transition: all ease-in-out 0.3s;
+  transition: all ease-in-out 0.3s;
+}
+
+.navigationalEle--hidden {
+  top: -150px;
+  -webkit-transition: all ease-in-out 0.3s;
+  transition: all ease-in-out 0.3s;
+}
+
+@media (max-width: 450px) {
+  .navigationalEle--hidden {
+    top: -120px;
+  }
+}
+/*# sourceMappingURL=Navigational.css.map */

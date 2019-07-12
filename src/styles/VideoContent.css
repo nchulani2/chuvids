@@ -1,0 +1,23 @@
+.videoContent {
+  color: white;
+}
+
+.videoContent .iframeWrapper {
+  position: relative;
+  height: 0;
+  max-width: 100%;
+  padding-bottom: 56.25%;
+}
+
+.videoContent .iframeWrapper .iframer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.videoContent div .descEle {
+  white-space: pre-line;
+}
+/*# sourceMappingURL=VideoContent.css.map */

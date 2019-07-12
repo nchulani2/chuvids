@@ -1,0 +1,21 @@
+.headerPar {
+  text-align: center;
+  padding-top: 10px;
+  color: white;
+  font-family: 'Comfortaa', cursive;
+  font-weight: bolder;
+  font-size: 2rem;
+  display: inline-block;
+  -webkit-transition: all linear 0.1s;
+  transition: all linear 0.1s;
+}
+
+@media (max-width: 450px) {
+  .headerPar {
+    font-size: 1.5rem;
+    height: 2rem;
+    -webkit-transition: all linear 0.1s;
+    transition: all linear 0.1s;
+  }
+}
+/*# sourceMappingURL=Header.css.map */

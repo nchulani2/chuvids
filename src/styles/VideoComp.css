@@ -1,0 +1,31 @@
+.item {
+  cursor: pointer;
+}
+
+.item .image {
+  border: 1px solid #262626;
+}
+
+.item .image img {
+  -webkit-transition: all ease-in-out 0.3s;
+  transition: all ease-in-out 0.3s;
+  width: unset;
+  height: unset;
+}
+
+.item .content #headerEle {
+  font-size: 15px;
+}
+
+@media (max-width: 600px) {
+  .item {
+    cursor: pointer;
+  }
+  .item .image img {
+    -webkit-transition: all ease-in-out 0.3s;
+    transition: all ease-in-out 0.3s;
+    width: 250px;
+    height: 140px;
+  }
+}
+/*# sourceMappingURL=VideoComp.css.map */
