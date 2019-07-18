@@ -177,21 +177,6 @@ export default class App extends React.Component {
   // initial call to api for default vids to be rendered
   componentDidMount = () => {
     this.handleApiCall('rainforest saib');
-    window.addEventListener(
-      'touchmove',
-      function(event) {
-        event.preventDefault();
-      },
-      { passive: false }
-    );
-    const app = document.querySelector('.index');
-    app.addEventListener(
-      'touchmove',
-      function(event) {
-        event.stopPropagation();
-      },
-      { passive: false }
-    );
   };
 
   render() {
