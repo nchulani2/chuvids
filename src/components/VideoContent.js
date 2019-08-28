@@ -22,7 +22,7 @@ export default class VideoContent extends React.Component {
     };
 
     return (
-      <div className="videoContent" style={{ position: 'sticky', top: '2rem' }}>
+      <div className="videoContent" style={{ position: 'sticky', top: '7rem' }}>
         <div className="iframeWrapper">
           <Youtube
             videoId={this.props.theVidId}

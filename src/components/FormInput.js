@@ -9,7 +9,7 @@ let options = {
 
 export default class FormInput extends React.Component {
   state = {
-    userInput: 'rainforest saib'
+    userInput: 'saib whale call'
   };
 
   // NOTE I did the other way, check in the JSX
@@ -28,19 +28,22 @@ export default class FormInput extends React.Component {
   };
   render() {
     return (
-      <form className="formInput" onSubmit={this.onFormSubmit}>
-        <div className="ui action input massive" id="formEle">
-          <input
-            value={this.state.userInput}
-            type="text"
-            placeholder="Search for video..."
-            onChange={e => this.setState({ userInput: e.target.value })}
-          />
-          <button className="ui icon button" id="buttonEle">
-            <i className="search icon" />
-          </button>
-        </div>
-      </form>
+      <div className="formInput">
+        <form onSubmit={this.onFormSubmit}>
+          <div className="ui action input" id="formEle">
+            <input
+              style={{ border: 'none' }}
+              value={this.state.userInput}
+              type="text"
+              placeholder="Search for video..."
+              onChange={e => this.setState({ userInput: e.target.value })}
+            />
+            <button className="ui icon button" id="buttonEle">
+              <i className="search icon" />
+            </button>
+          </div>
+        </form>
+      </div>
     );
   }
 }

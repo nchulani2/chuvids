@@ -9,12 +9,10 @@ class Index extends React.Component {
     loader.classList.add('loader--hide');
   };
 
-  showLoader = () => {
-    loader.classList.remove('loader--hide');
-  };
   componentDidMount = () => {
     this.hideLoader();
   };
+
   render() {
     return (
       <div className="index">
@@ -26,4 +24,4 @@ class Index extends React.Component {
 
 setTimeout(() => {
   ReactDOM.render(<Index />, document.querySelector('#root'));
-}, 3000);
+}, 3500);

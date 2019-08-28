@@ -1,6 +1,5 @@
 .checky {
   display: inline;
-  padding-left: 10px;
 }
 
 .checky input[type='checkbox'] {
@@ -13,6 +12,7 @@
   position: relative;
   display: inline-block;
   width: 40px;
+  top: 3px;
   height: 20px;
   background: black;
   cursor: pointer;
@@ -47,7 +47,7 @@
   -webkit-transition: 0.5s;
   transition: 0.5s;
   -webkit-transform: translateX(50px);
-          transform: translateX(50px);
+  transform: translateX(50px);
 }
 
 .checky input[type='checkbox']:checked ~ .check {
@@ -56,11 +56,11 @@
 
 .checky input[type='checkbox']:checked ~ .check::before {
   -webkit-transform: translateX(-50px);
-          transform: translateX(-50px);
+  transform: translateX(-50px);
 }
 
 .checky input[type='checkbox']:checked ~ .check::after {
   -webkit-transform: translateX(0);
-          transform: translateX(0);
+  transform: translateX(0);
 }
 /*# sourceMappingURL=Checkbox.css.map */

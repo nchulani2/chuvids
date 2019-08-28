@@ -1,13 +1,11 @@
 import React from 'react';
 import FormInput from './FormInput';
-import Header from './Header';
+import Checkbox from './Checkbox';
 import '../styles/Navigational.css';
 
 export default class Navigational extends React.Component {
   state = {
-    prevScrollPos: window.pageYOffset,
-    scrollClass: 'navigationalEle--hidden',
-    visible: true
+    prevScrollPos: window.pageYOffset
   };
   handleCallUp = userInput => {
     this.props.handleCall(userInput);
@@ -23,30 +21,37 @@ export default class Navigational extends React.Component {
 
   handleScroll = e => {
     const { prevScrollPos } = this.state;
-
     const currScrollPos = window.pageYOffset;
-    const visible = prevScrollPos > currScrollPos;
-
+    const visible = currScrollPos > prevScrollPos;
     this.setState({
-      prevScrollPos: currScrollPos,
-      visible: visible
+      prevScrollPos: currScrollPos
     });
-    if (currScrollPos < 15) {
-      this.setState({ visible: true });
+
+    if (visible) {
+      document
+        .querySelector('.navigationalEle')
+        .classList.remove('navigationalEle--hidden');
+    } else if (currScrollPos < 15) {
+      document
+        .querySelector('.navigationalEle')
+        .classList.add('navigationalEle--hidden');
+    } else {
+      document
+        .querySelector('.navigationalEle')
+        .classList.add('navigationalEle--hidden');
     }
-    // else if (currScrollPos > document.body.clientHeight) {
-    //   this.setState({ visible: false });
-    // }
   };
+
   render() {
     return (
-      <div
-        className={`navigationalEle ${
-          this.state.visible ? '' : this.state.scrollClass
-        }`}>
-        <Header />
+      <div className="navigationalEle navigationalEle--hidden">
+        <div className="naviFlex">
+          <div className="headerFlex">
+            chuvids <Checkbox />
+          </div>
 
-        <FormInput handleCall={this.handleCallUp} />
+          <FormInput handleCall={this.handleCallUp} />
+        </div>
       </div>
     );
   }

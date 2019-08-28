@@ -19,91 +19,11 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"
     />
     <link
-      href="https://fonts.googleapis.com/css?family=Comfortaa&display=swap"
+      href="https://fonts.googleapis.com/css?family=Comfortaa|Saira+Stencil+One&display=swap"
       rel="stylesheet"
     />
 
-    <style>
-      html {
-        position: relative;
-        min-height: 100%;
-        overflow-y: visible;
-        -webkit-overflow-scrolling: touch;
-        height: 100%;
-      }
-      body {
-        background: rgb(0, 0, 0);
-        transition: all linear 0.2s;
-        overflow-x: hidden;
-        -webkit-overflow-scrolling: touch;
-        margin: 0px;
-        position: relative;
-        min-height: 100%;
-        height: auto;
-      }
-      .loader {
-        top: 30%;
-        left: 0;
-        width: 100%;
-        z-index: -99;
-        position: fixed;
-        text-align: center;
-      }
-      .loader--hide {
-        animation: fadeOut 0.3s linear forwards;
-      }
-      @keyframes fadeOut {
-        0% {
-          opacity: 1;
-        }
-        100% {
-          opacity: 0;
-        }
-      }
-      svg {
-        transform: scale(0.8);
-        transform-origin: 71px 161px;
-      }
-      .loader__title span {
-        color: white;
-        font-size: 20px;
-        letter-spacing: 2px;
-        font-weight: 700;
-        font-family: 'Comfortaa', cursive;
-        animation: load8 1.1s linear forwards;
-        opacity: 0;
-      }
-      @keyframes load8 {
-        0% {
-          opacity: 0;
-        }
-
-        100% {
-          opacity: 1;
-        }
-      }
-      .loader__title span:nth-child(1) {
-        animation-delay: 1.1s;
-      }
-      .loader__title span:nth-child(2) {
-        animation-delay: 1.2s;
-      }
-      .loader__title span:nth-child(3) {
-        animation-delay: 1.3s;
-      }
-      .loader__title span:nth-child(4) {
-        animation-delay: 1.4s;
-      }
-      .loader__title span:nth-child(5) {
-        animation-delay: 1.5s;
-      }
-      .loader__title span:nth-child(6) {
-        animation-delay: 1.6s;
-      }
-      .loader__title span:nth-child(7) {
-        animation-delay: 1.7s;
-      }
-    </style>
+    <link rel="stylesheet" href="./index.css" />
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -113,52 +33,72 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>Nav vids</title>
+    <title>Chuvids</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
 
-    <div class="loader animated fadeInUpBig delay-0s">
+    <div class="loader">
       <svg
+        class="svgLogo"
         width="200"
-        height="180"
+        height="86"
+        viewBox="0 0 360 86"
+        fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        xmlns:svg="http://www.w3.org/2000/svg"
-        xmlns:xlink="http://www.w3.org/1999/xlink"
       >
-        <g class="layer">
-          <title>Layer 2</title>
-          <circle
-            class="bordered"
-            cx="103.4"
-            cy="91.4"
-            fill="#f4f9f7"
-            id="svg_1"
-            r="82.63936"
-            stroke-dasharray="null"
-            stroke-linecap="null"
-            stroke-linejoin="null"
-            stroke-width="null"
-          />
-        </g>
-        <g class="layer">
-          <title>Layer 1</title>
-          <image
-            class="imageLay"
-            height="176.00001"
-            id="svg_9"
-            width="143.00001"
-            x="32"
-            xlink:href="https://www.freeiconspng.com/uploads/video-icon-1.png"
-            y="2.40002"
-          />
-        </g>
+        <path
+          class="letterLogo"
+          d="M40.5773 42.7C38.9107 42.4333 36.5107 42.3 33.3773 42.3C31.3107 42.3 29.844 42.4333 28.9773 42.7V28.2C33.7107 28.2667 38.6107 28.8667 43.6773 30V43L40.5773 42.7ZM28.2773 80.8C23.0773 80.8 18.944 80.1667 15.8773 78.9C12.8107 77.6333 10.544 75.7667 9.07734 73.3C7.74401 71.1667 6.87734 68.6667 6.47734 65.8C6.14401 62.9333 5.97734 59.2 5.97734 54.6C5.97734 50.4 6.14401 46.9 6.47734 44.1C6.81067 41.3 7.51067 38.8333 8.57734 36.7C9.84401 34.2333 11.744 32.3333 14.2773 31C16.8773 29.6 20.3773 28.7333 24.7773 28.4V54.5C24.7773 57.4333 24.844 59.6333 24.9773 61.1C25.1773 62.5667 25.544 63.7 26.0773 64.5C26.6773 65.3 27.5107 65.8667 28.5773 66.2C29.7107 66.5333 31.3107 66.7 33.3773 66.7C36.9107 66.7 39.344 66.6 40.6773 66.4L44.0773 66V79C39.144 80.2 33.8773 80.8 28.2773 80.8Z"
+          stroke="#EEEEEE"
+          stroke-width="3"
+          mask="url(#path-1-outside-1)"
+        />
+        <path
+          class="letterLogo"
+          d="M53.9617 5.7H72.4617V80H53.9617V5.7ZM82.8617 55.9C82.8617 52.3667 82.8284 50.0333 82.7617 48.9C82.6284 47.0333 82.4617 45.8 82.2617 45.2C81.9951 44.5333 81.5284 44.1333 80.8617 44C80.195 43.8 79.1284 43.7 77.6617 43.7H76.6617V31.5C79.3284 29.3667 82.7284 28.3 86.8617 28.3C92.8617 28.3 96.895 30.1333 98.9617 33.8C99.895 35.4 100.528 37.3667 100.862 39.7C101.195 41.9667 101.362 44.7667 101.362 48.1V80H82.8617V55.9Z"
+          stroke="#EEEEEE"
+          stroke-width="3"
+          mask="url(#path-1-outside-1)"
+        />
+        <path
+          class="letterLogo"
+          d="M127.051 80.7C121.051 80.7 117.017 78.8667 114.951 75.2C114.017 73.6 113.384 71.6667 113.051 69.4C112.717 67.0667 112.551 64.2333 112.551 60.9V29H131.051V53.1C131.051 56.6333 131.084 58.9667 131.151 60.1C131.284 61.7667 131.484 62.9667 131.751 63.7C132.017 64.4333 132.451 64.9 133.051 65.1C133.651 65.2333 134.717 65.3 136.251 65.3H137.251V77.8C134.651 79.7333 131.251 80.7 127.051 80.7ZM141.451 29H159.951V80H141.451V29Z"
+          stroke="#EEEEEE"
+          stroke-width="3"
+          mask="url(#path-1-outside-1)"
+        />
+        <path
+          class="letterLogo"
+          d="M166.645 29H185.545L199.245 80H181.545L166.645 29ZM196.345 53L201.545 29H219.745L204.845 80H203.645L196.345 53Z"
+          stroke="#EEEEEE"
+          stroke-width="3"
+          mask="url(#path-1-outside-1)"
+        />
+        <path
+          class="letterLogo"
+          d="M226.423 5.7H244.923V20.1H226.423V5.7ZM226.423 29H244.923V80H226.423V29Z"
+          stroke="#EEEEEE"
+          stroke-width="3"
+          mask="url(#path-1-outside-1)"
+        />
+        <path
+          class="letterLogo"
+          d="M284.205 5.7H302.705V80H284.205V5.7ZM269.805 80.7C267.139 80.7 264.839 80.2667 262.905 79.4C261.039 78.5333 259.539 77.1333 258.405 75.2C257.139 73.2 256.205 70.5333 255.605 67.2C255.072 63.8667 254.805 59.7 254.805 54.7C254.805 44.9 256.005 38.0333 258.405 34.1C260.672 30.2333 264.472 28.3 269.805 28.3C272.205 28.3 274.172 28.5 275.705 28.9C277.239 29.2333 278.672 29.9333 280.005 31V43.7H278.905C277.439 43.7 276.372 43.8 275.705 44C275.105 44.1333 274.639 44.5 274.305 45.1C273.972 45.8333 273.772 46.9 273.705 48.3C273.639 49.3 273.605 51.3667 273.605 54.5C273.605 57.6333 273.639 59.7 273.705 60.7C273.772 62.1 273.972 63.1667 274.305 63.9C274.639 64.5667 275.172 64.9667 275.905 65.1C276.839 65.2333 277.839 65.3 278.905 65.3H280.005V78C278.672 79 277.172 79.7 275.505 80.1C273.905 80.5 272.005 80.7 269.805 80.7Z"
+          stroke="#EEEEEE"
+          stroke-width="3"
+          mask="url(#path-1-outside-1)"
+        />
+        <path
+          class="letterLogo"
+          d="M351.918 42.9C350.651 42.8333 348.918 42.6667 346.718 42.4C342.585 42 339.251 41.8 336.718 41.8H333.418V28.2C338.151 28.2 342.651 28.5333 346.918 29.2L351.918 30.1V42.9ZM337.418 64.5C337.418 63.5 337.251 62.8667 336.918 62.6C336.585 62.3333 335.885 62.1333 334.818 62L324.018 60.5C321.351 60.1 319.185 59.4667 317.518 58.6C315.918 57.7333 314.718 56.5667 313.918 55.1C313.118 53.8333 312.585 52.3 312.318 50.5C312.051 48.7 311.918 46.4667 311.918 43.8C311.918 38.3333 313.551 34.3333 316.818 31.8C319.551 29.8 323.685 28.6333 329.218 28.3V44C329.218 45 329.351 45.6667 329.618 46C329.885 46.2667 330.718 46.5 332.118 46.7L344.118 48.3C345.851 48.5 347.351 48.8667 348.618 49.4C349.885 49.8667 350.951 50.6 351.818 51.6C353.751 53.7333 354.718 57.8333 354.718 63.9C354.718 70.3 353.085 74.7667 349.818 77.3C346.951 79.4333 342.818 80.5667 337.418 80.7V64.5ZM333.218 80.8C327.885 80.7333 323.218 80.4 319.218 79.8L313.518 78.9V66.1C316.185 66.3667 319.785 66.6333 324.318 66.9C326.851 67.0333 328.651 67.1 329.718 67.1H333.218V80.8Z"
+          stroke="#EEEEEE"
+          stroke-width="3"
+          mask="url(#path-1-outside-1)"
+        />
       </svg>
-      <div class="loader__title">
-        <span>c</span><span>h</span><span>u</span><span>v</span><span>i</span
-        ><span>d</span><span>s</span>
-      </div>
+      <img class="imageLogo animated fadeInUp" src="./chuvids.jpg" />
     </div>
 
     <!--

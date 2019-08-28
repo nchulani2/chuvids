@@ -1,110 +1,104 @@
 .formInput {
   top: 0;
   text-align: center;
-  padding: 10px 0;
-  height: 6rem;
-  width: 100%;
+  margin: 15px 0;
+  width: 35rem;
   z-index: 99;
+  transition: all linear 0.2s;
 }
 
 .formInput #formEle {
-  width: 70%;
+  width: 100%;
   -webkit-transition: all linear 0.1s;
   transition: all linear 0.1s;
 }
 
 .formInput #formEle input {
-  border-bottom-left-radius: 80px;
-  border-top-left-radius: 80px;
-  padding: 20px;
+  padding: 10px;
   background: black;
-  font-size: 20px;
+  font-size: 15px;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
   -webkit-transition: all linear 0.1s;
   transition: all linear 0.1s;
   color: white;
 }
 
-.formInput #formEle input:focus {
+.formInput #formEle input:focus,
+.formInput #formEle input:active,
+.formInput #formEle input:hover {
   background: black;
   color: white;
 }
 
 .formInput #formEle input::-webkit-input-placeholder {
-  font-size: 20px;
-  color: white;
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.4);
 }
 
 .formInput #formEle input:-ms-input-placeholder {
-  font-size: 20px;
-  color: white;
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.4);
 }
 
 .formInput #formEle input::-ms-input-placeholder {
-  font-size: 20px;
-  color: white;
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.4);
 }
 
 .formInput #formEle input::placeholder {
-  font-size: 20px;
-  color: white;
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.4);
 }
 
-.formInput #formEle input:focus::-webkit-input-placeholder {
-  color: white;
+.formInput #formEle input:focus::-webkit-input-placeholder,
+.formInput #formEle input:hover::placeholder,
+.formInput #formEle input:hover::placeholder {
+  color: rgba(255, 255, 255, 0.4);
 }
 
-.formInput #formEle input:focus:-ms-input-placeholder {
-  color: white;
+.formInput #formEle input:focus:-ms-input-placeholder,
+.formInput #formEle input:hover::placeholder,
+.formInput #formEle input:hover::placeholder {
+  color: rgba(255, 255, 255, 0.4);
 }
 
-.formInput #formEle input:focus::-ms-input-placeholder {
-  color: white;
+.formInput #formEle input:focus::-ms-input-placeholder,
+.formInput #formEle input:hover::placeholder,
+.formInput #formEle input:hover::placeholder {
+  color: rgba(255, 255, 255, 0.4);
 }
 
-.formInput #formEle input:focus::placeholder {
-  color: white;
+.formInput #formEle input:focus::placeholder,
+.formInput #formEle input:hover::placeholder,
+.formInput #formEle input:hover::placeholder {
+  color: rgba(255, 255, 255, 0.4);
 }
 
 .formInput #formEle #buttonEle {
-  padding-right: 20px;
-  border-top-right-radius: 80px;
-  border-bottom-right-radius: 80px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
   background: #222222;
   -webkit-transition: all linear 0.1s;
   transition: all linear 0.1s;
 }
 
 .formInput #formEle #buttonEle i {
-  font-size: 20px;
+  font-size: 15px;
+  width: 15px;
+  height: 15px;
   color: rgba(255, 255, 255, 0.7);
 }
 
-@media (max-width: 450px) {
+@media (max-width: 600px) {
   .formInput {
-    height: 5rem;
-  }
-  .formInput #formEle {
-    height: 3.5rem;
-    -webkit-transition: all linear 0.1s;
-    transition: all linear 0.1s;
-  }
-  .formInput #formEle input {
-    padding: 15px;
-    font-size: 15px;
-    -webkit-transition: all linear 0.1s;
-    transition: all linear 0.1s;
-  }
-  .formInput #formEle #buttonEle {
-    padding-right: 20px;
-    border-top-right-radius: 80px;
-    border-bottom-right-radius: 80px;
-    background: #191919;
-    -webkit-transition: all linear 0.1s;
-    transition: all linear 0.1s;
-  }
-  .formInput #formEle #buttonEle i {
-    font-size: 15px;
-    color: rgba(255, 255, 255, 0.7);
+    width: 25rem;
+    transition: all linear 0.2s;
   }
 }
-/*# sourceMappingURL=FormInput.css.map */
+@media (max-width: 450px) {
+  .formInput {
+    width: 15rem;
+    transition: all linear 0.2s;
+  }
+}

@@ -1,13 +1,14 @@
-@import url("https://fonts.googleapis.com/css?family=Poly&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Poly&display=swap');
 .footer {
   background: #363636;
   padding: 10px 0;
   color: white;
-  font-family: 'Poly', serif;
+  font-size: 12px;
+  line-height: 12px;
+  font-family: 'Saira Stencil One', cursive;
+  letter-spacing: 1px;
   position: fixed;
-  height: 3rem;
   width: 100%;
   bottom: 0;
   text-align: center;
 }
-/*# sourceMappingURL=Footer.css.map */

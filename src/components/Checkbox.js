@@ -10,7 +10,11 @@ const handleMode = e => {
   // get body Element
   const bodyEle = document.body;
   // we need to change the color of every text on page background change also
-  const text = document.querySelector('.textEle');
+  const logoTopText = document.querySelector('.logoTop .logoTopText');
+  const mouseCont = document.querySelector('.mouseContainer .mouse');
+  const mouseScroll = document.querySelector(
+    '.mouseContainer .mouse .scroll-down'
+  );
   const vidCont = document.querySelector('.videoContent');
   const vidItemsHead = document.querySelectorAll(
     '.videoComp .content #headerEle'
@@ -18,40 +22,32 @@ const handleMode = e => {
   const vidItemsDesc = document.querySelectorAll(
     '.videoComp .content #descEle'
   );
-  const pagiLeft = document.querySelectorAll('.pagination .buttonParOne');
-  const pagiIconLeft = document.querySelectorAll('.pagination .buttonParOne i');
-  const pagiRight = document.querySelectorAll('.pagination .buttonParTwo');
-  const pagiIconRight = document.querySelectorAll(
-    '.pagination .buttonParTwo i'
-  );
 
   // if background is dark
   if (bodyCol === 'rgb(0, 0, 0)') {
-    bodyEle.style.background = 'rgb(250, 235, 215)';
-    text.style.color = 'black';
+    bodyEle.style.background = 'rgba(0, 0, 0, 0.1)';
+    logoTopText.style.color = 'black';
+    mouseCont.style.borderColor = '#000';
+    mouseScroll.style.background = '#000';
     vidCont.style.color = 'black';
-    pagiLeft[0].style.backgroundColor = 'grey';
-    pagiIconLeft[0].style.color = 'white';
-    pagiRight[0].style.backgroundColor = 'grey';
-    pagiIconRight[0].style.color = 'white';
-    for (let index = 0; index < vidItemsHead.length; index++) {
-      // since title and description will have similar array lengths
-      vidItemsHead[index].style.color = 'black';
-      vidItemsDesc[index].style.color = 'rgba(0, 0, 0, 0.6)';
-    }
-  } else if (bodyCol === 'rgb(250, 235, 215)') {
+    vidItemsDesc.forEach(description => {
+      description.style.color = 'rgba(0, 0, 0, 0.6)';
+    });
+    vidItemsHead.forEach(head => {
+      head.style.color = 'black';
+    });
+  } else if (bodyCol === 'rgba(0, 0, 0, 0.1)') {
     bodyEle.style.background = 'rgb(0, 0, 0)';
-    text.style.color = 'white';
+    logoTopText.style.color = 'white';
+    mouseCont.style.borderColor = '#fff';
+    mouseScroll.style.background = '#fff';
     vidCont.style.color = 'white';
-    pagiLeft[0].style.backgroundColor = '#363636';
-    pagiIconLeft[0].style.color = 'white';
-    pagiRight[0].style.backgroundColor = '#363636';
-    pagiIconRight[0].style.color = 'white';
-
-    for (let index = 0; index < vidItemsHead.length; index++) {
-      vidItemsHead[index].style.color = 'white';
-      vidItemsDesc[index].style.color = 'rgba(255, 255, 255, 0.6)';
-    }
+    vidItemsDesc.forEach(description => {
+      description.style.color = 'rgba(255, 255, 255, 0.6)';
+    });
+    vidItemsHead.forEach(head => {
+      head.style.color = 'white';
+    });
   }
   return;
 };

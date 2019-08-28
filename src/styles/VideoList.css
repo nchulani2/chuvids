@@ -1,7 +1,8 @@
 .videoList {
   color: unset;
   height: 100%;
-  margin-top: 160px;
+  padding-top: 20px;
+  margin-top: 50px;
   margin-bottom: 100px;
 }
 
@@ -15,14 +16,8 @@
 .videoList .gridEle .centeredEle {
   text-align: center;
 }
-
-@media (max-width: 450px) {
+@media (max-width: 767px) {
   .videoList {
-    margin-top: 130px;
-    margin-bottom: 100px;
-  }
-  .videoList .textEle {
-    font-size: 12px;
+    margin-top: 30px;
   }
 }
-/*# sourceMappingURL=VideoList.css.map */

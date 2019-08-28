@@ -1,21 +1,22 @@
 import React from 'react';
+import scrollIntoView from 'smooth-scroll-into-view-if-needed';
 import '../styles/VideoComp.css';
-
-const options = {
-  top: 0,
-  left: 0,
-  behavior: 'smooth'
-};
 
 export default class VideoComp extends React.Component {
   handleVideoClick = e => {
-    e.preventDefault();
-
     const { id, snippet } = this.props.videoDet;
     const idValue = id.videoId;
     const titleValue = snippet.title;
-
-    window.scrollTo(options);
+    const topOfPage = document.querySelector('.videoList');
+    console.log(topOfPage);
+    scrollIntoView(topOfPage, {
+      scrollMode: 'always',
+      block: 'start',
+      inline: 'nearest',
+      duration: window.innerWidth > 499 ? 800 : 2500,
+      ease: t =>
+        t < 0.5 ? 16 * t * t * t * t * t : 1 + 16 * --t * t * t * t * t
+    });
     this.props.onVidSelect(idValue, titleValue);
   };
 

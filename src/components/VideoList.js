@@ -1,7 +1,6 @@
 import React from 'react';
 import '../styles/VideoList.css';
 import VideoComp from './VideoComp';
-import Pagination from './Pagination';
 
 export default class VideoList extends React.Component {
   // NOTE IMPORTANT
@@ -25,9 +24,6 @@ export default class VideoList extends React.Component {
   render() {
     return (
       <div className="videoList">
-        <p className="textEle">
-          Number of videos found: <strong>{this.props.totalVids}</strong> videos
-        </p>
         <div className="ui stackable two column grid gridEle">
           <div className="nine wide column centeredEle">
             {this.props.children}
@@ -37,10 +33,6 @@ export default class VideoList extends React.Component {
             <div className="ui unstackable items">
               {this.handleVideos(this.props.videoQuant)}
             </div>
-            <Pagination
-              handleBack={this.props.handleGoBack}
-              handleForward={this.props.handleGoForward}
-            />
           </div>
         </div>
       </div>
