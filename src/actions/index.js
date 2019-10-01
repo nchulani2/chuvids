@@ -5,8 +5,10 @@ const key = {
   youKey: process.env.REACT_APP_YOUTUBE_KEY
 };
 
+/* -------------------------------------------------------------------------- */
+// LIST VIDEOS START
 export const getCatVideos = id => async dispatch => {
-  dispatch(loading());
+  dispatch(scrolling());
   const response = await youtube.get('youtube/v3/videos', {
     params: {
       part: 'snippet',
@@ -22,15 +24,43 @@ export const getCatVideos = id => async dispatch => {
     type: 'GET_CAT_VIDEOS',
     payload: {
       data: response.data.items,
-      token: response.data.nextPageToken
+      nextToken: response.data.nextPageToken
     }
   });
 };
 
-export const getMoreCatVids = id => async dispatch => {
+export const getMoreCatVids = id => async (dispatch, getState) => {
+  var { nextVideoToken } = getState().data;
+  dispatch(scrolling());
+  const response = await youtube.get('youtube/v3/videos', {
+    params: {
+      part: 'snippet',
+      chart: 'mostPopular',
+      videoCategoryId: isNaN(id) ? null : id,
+      maxResults: '20',
+      regionCode: 'US',
+      pageToken: nextVideoToken,
+      key: key.youKey
+    }
+  });
+
+  dispatch({
+    type: 'GET_MORE_CAT_VIDEOS',
+    payload: {
+      data: response.data.items,
+      nextToken: response.data.nextPageToken,
+      prevToken: response.data.prevPageToken
+    }
+  });
+};
+// END LIST VIDEOS
+/* -------------------------------------------------------------------------- */
+
+/* -------------------------------------------------------------------------- */
+// START SEARCH VIDEOS
+export const searchVids = query => async dispatch => {
   console.log('hit');
 };
-
 export const getSelectedVid = id => async (dispatch, getState) => {
   var data = getState().data;
 
@@ -53,8 +83,4 @@ const scrolling = () => dispatch => {
 };
 export const seeMore = () => dispatch => {
   dispatch({ type: 'SEE_MORE' });
-};
-
-const loading = () => dispatch => {
-  dispatch({ type: 'LOADING' });
 };

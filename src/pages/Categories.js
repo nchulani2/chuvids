@@ -41,6 +41,7 @@ class Categories extends Component {
     );
   };
   render() {
+    window.scrollTo(0, 0);
     return (
       <div
         className="sectioning animated fadeIn fast ui container"

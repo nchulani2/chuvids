@@ -5,6 +5,7 @@ import Navigational from './components/Navigational';
 import Home from './pages/Home';
 import Categories from './pages/Categories';
 import Videos from './pages/Videos';
+import Search from './pages/Search';
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
         <Route
           path="/videos/:videoCatTitle/:videoCatId"
           component={Videos}></Route>
+        <Route exact path="/search" component={Search}></Route>
       </Switch>
       <Navigational></Navigational>
     </div>

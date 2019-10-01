@@ -50,19 +50,26 @@ class VideoContent extends Component {
           </button>
 
           <Linkify options={{ target: '_blank' }}>
-            <div className="descEle" style={{ display: seeMore ? '' : 'none' }}>
+            <div
+              className="descEle"
+              style={{
+                display: seeMore ? '' : 'none'
+                // height:
+                //   seeMore
+                //     ? document.querySelector('.descEle').scrollHeight
+                //     : '0px'
+              }}>
               {snippet.description}
             </div>
           </Linkify>
+          <hr
+            style={{
+              marginTop: '30px',
+              opacity: '0.5',
+              border: '2px solid white'
+            }}
+          />
         </div>
-
-        <hr
-          style={{
-            marginTop: '30px',
-            opacity: '0.5',
-            border: '2px solid white'
-          }}
-        />
       </div>
     );
   }

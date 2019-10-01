@@ -1,8 +1,8 @@
 .loader {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position: relative;
+  width: 280px;
+  margin: 80px auto 10px auto;
+  z-index: -10;
 }
 
 .loader .gooey {

@@ -39,8 +39,9 @@
 .videoContent .snipCont .descEle {
   white-space: pre-line;
   color: rgba(255, 255, 255, 0.7);
-  margin: 20px 0 40px 0;
+  margin: 20px 0;
   overflow: hidden;
+  transition: all ease 0.7s;
 }
 
 .videoContent .snipCont .descButt {

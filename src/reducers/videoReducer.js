@@ -1,7 +1,8 @@
 const initialState = {
   videoState: [],
   selectedVidState: '',
-  videoToken: null,
+  nextVideoToken: null,
+  prevVideoToken: null,
   loading: false,
   seeMore: false,
   scrolling: false
@@ -14,16 +15,27 @@ export default (state = initialState, action) => {
         ...state,
         selectedVidState: '',
         videoState: action.payload.data,
-        videoToken: action.payload.token,
+        nextVideoToken: action.payload.nextToken,
         seeMore: false,
-        loading: false
+        loading: false,
+        scrolling: false
       };
     case 'GET_MORE_CAT_VIDEOS':
+      return {
+        ...state,
+        videoState: [...state.videoState, ...action.payload.data],
+        nextVideoToken: action.payload.nextToken,
+        loading: false,
+        scrolling: false
+      };
+    case 'SEARCH_VIDS':
       return;
     case 'GET_SELECT_VID':
       return {
         ...state,
         selectedVidState: action.payload,
+        scrolling: false,
+        loading: false,
         seeMore: false
       };
     case 'SEE_MORE':
@@ -34,13 +46,10 @@ export default (state = initialState, action) => {
     case 'SCROLLING':
       return {
         ...state,
+        loading: true,
         scrolling: true
       };
-    case 'LOADING':
-      return {
-        ...state,
-        loading: true
-      };
+
     default:
       return state;
   }

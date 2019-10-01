@@ -10,9 +10,9 @@ import '../styles/pages/Videos.css';
 
 class Videos extends Component {
   componentDidMount = () => {
-    window.addEventListener('scroll', this.handleScroll);
     const { videoCatId } = this.props.match.params;
     this.props.getCatVideos(videoCatId);
+    window.addEventListener('scroll', this.handleScroll);
   };
   componentWillUnmount = () => {
     window.removeEventListener('scroll', this.handleScroll);
@@ -23,9 +23,11 @@ class Videos extends Component {
   };
 
   handleScroll = e => {
-    // const { scrolling } = this.props.imageState;
+    const { videoCatId } = this.props.match.params;
 
-    // if (scrolling) return;
+    const { scrolling } = this.props.videos;
+
+    if (scrolling) return;
 
     let scrollTop =
       (document.documentElement && document.documentElement.scrollTop) ||
@@ -41,18 +43,19 @@ class Videos extends Component {
     let scrolledToBottom =
       Math.ceil(scrollTop + clientHeight) >= scrollHeight - 100;
     if (scrolledToBottom) {
-      this.props.getMoreCatVids();
+      this.props.getMoreCatVids(videoCatId);
     }
   };
 
   render() {
+    console.log(this.props.videos);
     const { videoCatTitle } = this.props.match.params;
     const { videoState, loading, selectedVidState } = this.props.videos;
 
     return (
       <div
         className="sectioning animated fadeIn fast ui container"
-        style={{ height: loading ? '100vh' : '100%' }}>
+        style={{ height: '100%' }}>
         <Title titleText={videoCatTitle}></Title>
         <div className="topOfContent">
           {selectedVidState !== null && !_.isEmpty(selectedVidState) ? (
@@ -60,13 +63,12 @@ class Videos extends Component {
           ) : null}
         </div>
         <div className="videos">
-          {videoState.length !== 0 && Array.isArray(videoState) && !loading ? (
+          {videoState.length !== 0 && Array.isArray(videoState) ? (
             <div className="videosGrid">
               {videoState.map(video => this.renderVids(video))}
             </div>
-          ) : (
-            <Loader></Loader>
-          )}
+          ) : null}
+          {loading ? <Loader></Loader> : null}
         </div>
       </div>
     );
