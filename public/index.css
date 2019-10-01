@@ -16,33 +16,32 @@
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #363636;
+  background: #262626;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: rgba(209, 77, 77, 0.7);
+  background: #0d7772;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: rgb(200, 75, 75);
+  background: #0f8680;
 }
 /* -------------------------------------------------------------------------- */
 
 html {
   position: relative;
   min-height: 100%;
-  /* overflow-x: hidden; */
-  overflow-y: visible;
+  overflow-x: hidden;
+  overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   height: 100%;
 }
 body {
   background: rgb(0, 0, 0);
   transition: all linear 0.2s;
-  overflow-x: hidden;
-  overflow-y: scroll;
+  overflow: hidden;
   -webkit-overflow-scrolling: touch;
   padding: 0;
   margin: 0;
@@ -61,88 +60,3 @@ body {
         background: linear-gradient(to right, #dae2f8, #d6a4a4); */
 /* -------------------------------------------------------------------------- */
 /* } */
-
-.loader {
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-  z-index: -99;
-  position: fixed;
-  text-align: center;
-}
-
-.loader .svgLogo {
-  animation: fill 0.5s ease forwards 2.3s;
-}
-.loader .svgLogo .letterLogo:nth-child(1) {
-  stroke-dasharray: 219;
-  stroke-dashoffset: 219;
-  animation: lineAnim 2s ease forwards 0.3s;
-}
-.loader .svgLogo .letterLogo:nth-child(2) {
-  stroke-dasharray: 328;
-  stroke-dashoffset: 328;
-  animation: lineAnim 2s ease forwards 0.5s;
-}
-.loader .svgLogo .letterLogo:nth-child(3) {
-  stroke-dasharray: 282;
-  stroke-dashoffset: 282;
-  animation: lineAnim 2s ease forwards 0.7s;
-}
-.loader .svgLogo .letterLogo:nth-child(4) {
-  stroke-dasharray: 267;
-  stroke-dashoffset: 267;
-  animation: lineAnim 2s ease forwards 0.9s;
-}
-.loader .svgLogo .letterLogo:nth-child(5) {
-  stroke-dasharray: 204;
-  stroke-dashoffset: 204;
-  animation: lineAnim 2s ease forwards 1.1s;
-}
-.loader .svgLogo .letterLogo:nth-child(6) {
-  stroke-dasharray: 332;
-  stroke-dashoffset: 332;
-  animation: lineAnim 2s ease forwards 1.3s;
-}
-.loader .svgLogo .letterLogo:nth-child(7) {
-  stroke-dasharray: 292;
-  stroke-dashoffset: 292;
-  animation: lineAnim 2s ease forwards 1.5s;
-}
-
-@keyframes lineAnim {
-  to {
-    stroke-dashoffset: 0;
-  }
-}
-@keyframes fill {
-  from {
-    fill: transparent;
-  }
-  to {
-    fill: white;
-  }
-}
-
-.loader--hide {
-  animation: fadeOut 0.3s linear forwards;
-}
-@keyframes fadeOut {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-.loader .imageLogo {
-  position: relative;
-  display: block;
-  width: 100px;
-  height: 100px;
-  margin: 0 auto;
-  animation-delay: 2.3s;
-  animation-duration: 1s;
-}

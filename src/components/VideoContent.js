@@ -1,13 +1,16 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Youtube from 'react-youtube';
+import Linkify from 'linkifyjs/react';
+import { connect } from 'react-redux';
+import { seeMore } from '../actions';
 import '../styles/VideoContent.css';
 
-export default class VideoContent extends React.Component {
-  onVidEnd = e => {
-    setTimeout(() => {
-      this.props.onEndedVid(e);
-    }, 3000);
-  };
+class VideoContent extends Component {
+  // onVidEnd = e => {
+  //   setTimeout(() => {
+  //     this.props.onEndedVid(e);
+  //   }, 3000);
+  // };
 
   onVidReady = e => {
     e.target.playVideo();
@@ -17,29 +20,59 @@ export default class VideoContent extends React.Component {
     const opts = {
       playerVars: {
         autoplay: 1,
-        origin: 'https://localhost:3000'
+        origin: 'http://localhost:3000/'
       }
     };
+    const { id, snippet } = this.props.videos.selectedVidState;
+    const { seeMore } = this.props.videos;
 
     return (
-      <div className="videoContent" style={{ position: 'sticky', top: '7rem' }}>
+      <div className="videoContent">
         <div className="iframeWrapper">
           <Youtube
-            videoId={this.props.theVidId}
+            videoId={id}
             opts={opts}
             onReady={this.onVidReady}
-            onEnd={this.onVidEnd}
+            // onEnd={this.onVidEnd}
             className="iframer"
           />
         </div>
 
-        <div style={{ textAlign: 'left', paddingTop: '20px' }}>
-          <h3>{this.props.theVidTitle}</h3>
-          <hr style={{ opacity: '0.1' }} />
-          <div className="descEle">{this.props.theVidDesc}</div>
+        <div className="snipCont">
+          <div className="snipTitle">{snippet.title}</div>
+          <div className="snipDate">
+            Date posted: <span>{snippet.publishedAt}</span>
+          </div>
+          <hr style={{ opacity: '0.1', marginTop: '20px' }} />
+
+          <button className="descButt" onClick={() => this.props.seeMore()}>
+            {seeMore ? 'Close ✗' : 'See details'}
+          </button>
+
+          <Linkify options={{ target: '_blank' }}>
+            <div className="descEle" style={{ display: seeMore ? '' : 'none' }}>
+              {snippet.description}
+            </div>
+          </Linkify>
         </div>
-        <hr style={{ marginTop: '30px', opacity: '0.1' }} />
+
+        <hr
+          style={{
+            marginTop: '30px',
+            opacity: '0.5',
+            border: '2px solid white'
+          }}
+        />
       </div>
     );
   }
 }
+
+const mapStateToProps = state => {
+  return { videos: state.data };
+};
+
+export default connect(
+  mapStateToProps,
+  { seeMore }
+)(VideoContent);

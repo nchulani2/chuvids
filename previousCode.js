@@ -1,11 +1,8 @@
 import React from 'react';
-import youtube from '../api/youtube';
-import Navigational from './Navigational';
-import VideoList from './VideoList';
-import VideoContent from './VideoContent';
-import Footer from './Footer';
-
-import '../styles/App.css';
+import youtube from './api/youtube';
+import Navigational from './components/Navigational';
+import VideoList from './components/VideoList';
+import VideoContent from './components/VideoContent';
 
 const apiKey = {
   youKey: process.env.REACT_APP_YOUTUBE_KEY
@@ -113,14 +110,6 @@ export default class App extends React.Component {
           totalCount={this.state.totalVideos}
         />
         <div className="ui container">
-          <div className="logoTop">
-            <div className="logoTopText">Scroll to get started</div>
-            <div className="mouseContainer">
-              <div className="mouse">
-                <span className="scroll-down" />
-              </div>
-            </div>
-          </div>
           <VideoList
             handleGoBack={this.goBack}
             handleGoForward={this.goForward}
@@ -135,7 +124,6 @@ export default class App extends React.Component {
             />
           </VideoList>
         </div>
-        <Footer />
       </div>
     );
   }

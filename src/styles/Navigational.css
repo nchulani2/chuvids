@@ -1,54 +1,174 @@
-.navigationalEle {
-  background: #363636;
-  width: 100%;
+.navigation {
   position: fixed;
-  top: 0;
-  z-index: 99;
-  -webkit-transition: top ease-in-out 0.5s, background ease-in-out 1s;
-  -o-transition: top ease-in-out 0.5s, background ease-in-out 1s;
-  transition: top ease-in-out 0.5s, background ease-in-out 1s;
+  top: 10px;
+  left: 10px;
+  width: 50px;
+  height: 50px;
+  z-index: 20;
 }
 
-.navigationalEle--hidden {
-  -webkit-transition: top ease-in-out 0.3s, background ease-in-out 0.3s;
-  -o-transition: top ease-in-out 0.3s, background ease-in-out 0.3s;
-  transition: top ease-in-out 0.3s, background ease-in-out 0.3s;
-  top: -110px;
-  background: transparent;
+.navigation .buttonNav {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 2px;
+  z-index: 10;
+  background: #0d7772;
+  cursor: pointer;
+  outline: none;
+  animation-delay: 0.5s;
+  transition: all ease 0.15s;
+}
+.navigation .buttonNav:hover {
+  background: #119e97;
+  transition: all ease 0.15s;
 }
 
-.navigationalEle .naviFlex {
-  display: -webkit-box;
-  display: -ms-flexbox;
+.navigation .buttonNav #burger-top {
+  background: white;
+  position: absolute;
+  right: 50%;
+  bottom: 70%;
+  width: 25px;
+  height: 3px;
+  transform: translate(50%, 70%);
+  transition: all ease 0.3s;
+}
+.navigation .buttonNav #burger-mid {
+  background: white;
+  position: absolute;
+  right: 50%;
+  bottom: 50%;
+  transform: translate(50%, 50%);
+  width: 25px;
+  height: 3px;
+  transition: all ease 0.3s;
+}
+.navigation .buttonNav #burger-bot {
+  background: white;
+  position: absolute;
+  right: 50%;
+  bottom: 30%;
+  width: 25px;
+  height: 3px;
+  transform: translate(50%, 30%);
+  transition: all ease 0.3s;
+}
+.navigation .buttonNav #burger-top.isopen {
+  transform: translate(50%, 10px) rotate(45deg);
+  transition: all ease 0.3s;
+}
+.navigation .buttonNav #burger-mid.isopen {
+  opacity: 0;
+  transition: all ease 0.3s;
+}
+.navigation .buttonNav #burger-bot.isopen {
+  transform: translate(50%, -10px) rotate(-45deg);
+  transition: all ease 0.3s;
+}
+
+.navigation .overlayNav {
+  position: fixed;
+  z-index: -1;
+  bottom: 0;
+  left: 0;
+  height: 160px;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  animation-duration: 0.3s;
+}
+
+.navigation .flexLinks {
   display: flex;
-  position: relative;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -ms-flex-pack: distribute;
-  justify-content: space-around;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-.navigationalEle .naviFlex .headerFlex {
-  text-align: center;
-  line-height: 25px;
-  margin: 10px 0;
-  color: white;
+  justify-content: center;
+  align-items: flex-end;
+  width: 100%;
+  height: 100px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   font-family: 'Saira Stencil One', cursive;
-  font-weight: 100;
-  font-size: 25px;
-  letter-spacing: 2px;
 }
 
-@media (max-width: 767px) {
-  .navigationalEle .naviFlex {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    padding-top: 10px;
+.navigation .flexLinks .linkEle {
+  margin: 0 40px;
+  padding: 10px;
+  color: white;
+  font-size: 30px;
+  line-height: 30px;
+  letter-spacing: 2px;
+  animation-delay: 0.3s;
+  transition: all ease 0.25s;
+  text-align: center;
+}
+.navigation .flexLinks .linkEle::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  transition: all ease 0.25s;
+  border-bottom: 3px solid #119e97;
+}
+
+.navigation .flexLinks .linkEle:hover::before {
+  width: 100%;
+  transition: all ease 0.25s;
+}
+.navigation .flexLinks .linkEle:hover {
+  color: #119e97;
+  transition: all ease 0.25s;
+}
+.navigation .flexLinks .linkEle .iconEle {
+  display: block;
+  margin: 0 auto 5px auto;
+  font-size: 20px;
+  transition: all ease 0.25s;
+  color: white;
+}
+
+.navigation .flexLinks .linkEle:hover .iconEle {
+  display: block;
+  margin-bottom: 25px;
+  color: #119e97;
+  transition: all ease 0.25s;
+}
+
+.transIt {
+  transform: translate(0, -160px);
+  transition: all ease 0.3s;
+}
+
+.transItBack {
+  transform: translate(0, 0);
+  transition: all ease 0.3s;
+}
+
+.hiddenBody {
+  visibility: hidden;
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .navigation .flexLinks .linkEle {
+    font-size: 20px;
+    line-height: 20px;
+  }
+  .navigation .flexLinks .linkEle .iconEle {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 600px) {
+  .navigation .flexLinks .linkEle {
+    margin: 0 15px;
+    font-size: 16px;
+    line-height: 20px;
+    padding: 5px;
+  }
+  .navigation .flexLinks .linkEle .iconEle {
+    font-size: 16px;
   }
 }

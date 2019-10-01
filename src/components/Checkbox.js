@@ -1,4 +1,4 @@
-import React from 'react';
+import React from './node_modules/react';
 import '../styles/Checkbox.css';
 
 const handleMode = e => {

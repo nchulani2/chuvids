@@ -1,5 +1,6 @@
 .videoContent {
   color: white;
+  margin-bottom: 30px;
 }
 
 .videoContent .iframeWrapper {
@@ -17,7 +18,46 @@
   height: 100%;
 }
 
-.videoContent div .descEle {
-  white-space: pre-line;
+.videoContent .snipCont {
+  padding-top: 20px;
+  text-align: left;
 }
-/*# sourceMappingURL=VideoContent.css.map */
+
+.videoContent .snipCont .snipTitle {
+  font-size: 25px;
+  font-weight: 100;
+  font-family: 'Saira Stencil One', cursive;
+  margin-bottom: 15px;
+  line-height: 30px;
+}
+.videoContent .snipCont .snipDate {
+  font-size: 18px;
+}
+.videoContent .snipCont .snipDate span {
+  color: rgba(255, 255, 255, 0.7);
+}
+.videoContent .snipCont .descEle {
+  white-space: pre-line;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 20px 0 40px 0;
+  overflow: hidden;
+}
+
+.videoContent .snipCont .descButt {
+  cursor: pointer;
+  font-size: 18px;
+  padding: 15px;
+  box-shadow: inset 0px 0px transparent;
+  background: transparent;
+  border: 2px solid #0d7772;
+  color: #0d7772;
+  border-radius: 2px;
+  outline: none;
+  font-family: 'Saira Stencil One', cursive;
+  transition: all ease 0.35s;
+}
+.videoContent .snipCont .descButt:hover {
+  color: white;
+  box-shadow: inset 0px -3.8rem #0d7772;
+  transition: all ease 0.35s;
+}

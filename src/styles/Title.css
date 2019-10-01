@@ -1,0 +1,19 @@
+.title {
+  font-size: 36px;
+  color: white;
+  line-height: 36px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 50px;
+  font-family: 'Saira Stencil One', cursive;
+}
+
+.title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100px;
+  height: 100px;
+}

@@ -1,0 +1,73 @@
+.loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.loader .gooey {
+  height: 10rem;
+  width: 20rem;
+  background: #000;
+  position: relative;
+  filter: contrast(1);
+  animation: rotate-center 1.5s linear infinite both;
+}
+.loader .gooey::after,
+.loader .gooey::before {
+  content: '';
+  height: 3rem;
+  width: 3rem;
+  display: block;
+  background: #0d7772;
+  box-shadow: 0 0 30px 10px #0d7772;
+  border-radius: 100%;
+  position: absolute;
+  top: 3rem;
+}
+.loader .gooey::after {
+  left: 7rem;
+  animation: slide-right 5s cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite
+    alternate-reverse both;
+}
+
+.loader .gooey::before {
+  right: 7rem;
+  animation: slide-left 5s cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite
+    alternate-reverse both;
+}
+@keyframes slide-right {
+  0% {
+    transform: translateX(-3.5rem) scale(1);
+  }
+  100% {
+    transform: translateX(4.5rem) scale(1.1);
+  }
+}
+
+@keyframes slide-left {
+  0% {
+    transform: translateX(3.5rem) scale(1);
+  }
+  100% {
+    transform: translateX(-4.5rem) scale(1.1);
+  }
+}
+
+@keyframes rotate-center {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes slide-top {
+  0% {
+    transform: translateY(2rem);
+  }
+  100% {
+    transform: translateY(-2rem);
+  }
+}

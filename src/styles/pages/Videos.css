@@ -1,0 +1,35 @@
+body {
+  padding: 0;
+  margin: 0;
+  height: auto;
+  background: #000;
+}
+/*NOTE SCROLLBAR MANIPULATION */
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #262626;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #0d7772;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #0f8680;
+}
+.videosGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, auto));
+  grid-auto-rows: minmax(150px, auto);
+  justify-content: center;
+  align-content: stretch;
+  height: 100%;
+  grid-gap: 20px;
+  color: white;
+}
