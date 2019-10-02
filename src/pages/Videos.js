@@ -5,6 +5,7 @@ import Title from '../components/Title';
 import Loader from '../components/Loader';
 import VideoComp from '../components/VideoComp';
 import VideoContent from '../components/VideoContent';
+import VideosGrid from '../components/VideosGrid';
 import _ from 'lodash';
 import '../styles/pages/Videos.css';
 
@@ -64,9 +65,9 @@ class Videos extends Component {
         </div>
         <div className="videos">
           {videoState.length !== 0 && Array.isArray(videoState) ? (
-            <div className="videosGrid">
+            <VideosGrid>
               {videoState.map(video => this.renderVids(video))}
-            </div>
+            </VideosGrid>
           ) : null}
           {loading ? <Loader></Loader> : null}
         </div>

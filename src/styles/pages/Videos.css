@@ -23,13 +23,3 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #0f8680;
 }
-.videosGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, auto));
-  grid-auto-rows: minmax(150px, auto);
-  justify-content: center;
-  align-content: stretch;
-  height: 100%;
-  grid-gap: 20px;
-  color: white;
-}

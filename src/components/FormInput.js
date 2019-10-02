@@ -1,45 +1,39 @@
 import React from 'react';
+import { searchVids } from '../actions';
+import { connect } from 'react-redux';
+import scrollIntoView from 'smooth-scroll-into-view-if-needed';
 import '../styles/FormInput.css';
 
-let ele;
-let options = {
-  block: 'start',
-  behavior: 'smooth'
-};
-
-export default class FormInput extends React.Component {
+class FormInput extends React.Component {
   state = {
-    userInput: 'saib whale call'
+    userInput: ''
   };
-
-  // NOTE I did the other way, check in the JSX
-  // handleUserInput = e => {
-  //   this.setState({ userInput: e.target.value });
-  // };
 
   onFormSubmit = e => {
     e.preventDefault();
-    ele.scrollIntoView(options);
-    this.props.handleCall(this.state.userInput);
+    var videoTop = document.querySelector('.videos');
+    scrollIntoView(videoTop, {
+      scrollMode: 'always',
+      block: 'start'
+    });
+    var query =
+      this.state.userInput[0].toUpperCase() + this.state.userInput.slice(1);
+    this.props.searchVids(query);
   };
 
-  componentDidMount = () => {
-    ele = document.getElementById('scrollOnSubmit');
-  };
   render() {
     return (
       <div className="formInput">
         <form onSubmit={this.onFormSubmit}>
-          <div className="ui action input" id="formEle">
+          <div className="ui right labeled input" id="formEle">
             <input
-              style={{ border: 'none' }}
-              value={this.state.userInput}
               type="text"
-              placeholder="Search for video..."
-              onChange={e => this.setState({ userInput: e.target.value })}
-            />
-            <button className="ui icon button" id="buttonEle">
-              <i className="search icon" />
+              placeholder="Enter video name. . ."
+              onChange={e =>
+                this.setState({ userInput: e.target.value })
+              }></input>
+            <button className="ui tag label formButton" type="submit">
+              <i className="search icon"></i>
             </button>
           </div>
         </form>
@@ -47,3 +41,12 @@ export default class FormInput extends React.Component {
     );
   }
 }
+
+const mapStateToProps = state => {
+  return { videos: state.data };
+};
+
+export default connect(
+  mapStateToProps,
+  { searchVids }
+)(FormInput);

@@ -21,6 +21,7 @@ class VideoComp extends React.Component {
   render() {
     const { thumbnails, title, channelTitle } = this.props.videoDet.snippet;
     const { id } = this.props.videoDet;
+    // console.log(this.props);
     // check if id matches, do nothing if it does
     var exactId = this.props.videos.selectedVidState.id;
     const top = document.querySelector('.topOfContent');

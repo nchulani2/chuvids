@@ -1,104 +1,72 @@
 .formInput {
-  top: 0;
   text-align: center;
-  margin: 15px 0;
-  width: 35rem;
+  margin: 15px auto 40px auto;
+  width: 40rem;
   z-index: 99;
   transition: all linear 0.2s;
 }
 
 .formInput #formEle {
   width: 100%;
+  height: 4rem;
   -webkit-transition: all linear 0.1s;
   transition: all linear 0.1s;
+}
+
+.formInput #formEle i {
+  font-size: 18px;
+  margin-right: 10px;
 }
 
 .formInput #formEle input {
-  padding: 10px;
-  background: black;
-  font-size: 15px;
-  border-top-left-radius: 4px;
-  border-bottom-left-radius: 4px;
+  padding: 15px;
+  background: #e8e8e8;
+  font-size: 18px;
   -webkit-transition: all linear 0.1s;
   transition: all linear 0.1s;
-  color: white;
+  color: black;
+  outline: none;
+  border: none;
 }
-
 .formInput #formEle input:focus,
 .formInput #formEle input:active,
 .formInput #formEle input:hover {
-  background: black;
-  color: white;
+  border: none;
 }
-
-.formInput #formEle input::-webkit-input-placeholder {
-  font-size: 15px;
-  color: rgba(255, 255, 255, 0.4);
-}
-
-.formInput #formEle input:-ms-input-placeholder {
-  font-size: 15px;
-  color: rgba(255, 255, 255, 0.4);
-}
-
-.formInput #formEle input::-ms-input-placeholder {
-  font-size: 15px;
-  color: rgba(255, 255, 255, 0.4);
-}
-
 .formInput #formEle input::placeholder {
-  font-size: 15px;
-  color: rgba(255, 255, 255, 0.4);
+  font-size: 18px;
+  color: rgba(0, 0, 0, 0.4);
 }
 
-.formInput #formEle input:focus::-webkit-input-placeholder,
-.formInput #formEle input:hover::placeholder,
-.formInput #formEle input:hover::placeholder {
-  color: rgba(255, 255, 255, 0.4);
+.formInput #formEle .formButton {
+  background: #119791;
+  cursor: pointer;
+  transition: all ease 0.3s;
+  outline: none;
 }
 
-.formInput #formEle input:focus:-ms-input-placeholder,
-.formInput #formEle input:hover::placeholder,
-.formInput #formEle input:hover::placeholder {
-  color: rgba(255, 255, 255, 0.4);
+.formInput #formEle .formButton:hover {
+  transition: all ease 0.3s;
+  box-shadow: inset 0px -4em #16beb6;
+}
+.formInput #formEle .formButton i {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 22px;
+  margin: 0;
 }
 
-.formInput #formEle input:focus::-ms-input-placeholder,
-.formInput #formEle input:hover::placeholder,
-.formInput #formEle input:hover::placeholder {
-  color: rgba(255, 255, 255, 0.4);
-}
-
-.formInput #formEle input:focus::placeholder,
-.formInput #formEle input:hover::placeholder,
-.formInput #formEle input:hover::placeholder {
-  color: rgba(255, 255, 255, 0.4);
-}
-
-.formInput #formEle #buttonEle {
-  border-top-right-radius: 4px;
-  border-bottom-right-radius: 4px;
-  background: #222222;
-  -webkit-transition: all linear 0.1s;
-  transition: all linear 0.1s;
-}
-
-.formInput #formEle #buttonEle i {
-  font-size: 15px;
-  width: 15px;
-  height: 15px;
-  color: rgba(255, 255, 255, 0.7);
-}
-
-@media (max-width: 600px) {
+@media (max-width: 650px) {
   .formInput {
-    width: 25rem;
+    width: 30rem;
     transition: all linear 0.2s;
   }
 }
 @media (max-width: 450px) {
   .formInput {
-    width: 15rem;
+    width: 20rem;
     transition: all linear 0.2s;
+  }
+  .formInput #formEle .formButton {
+    padding: 15px;
   }
 }
