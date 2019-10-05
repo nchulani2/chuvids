@@ -55,9 +55,7 @@ class Navigation extends Component {
   render() {
     return (
       <div className="navigation">
-        <button
-          onClick={this.toggleOverlay}
-          className="buttonNav animated bounceInLeft faster">
+        <button onClick={this.toggleOverlay} className="buttonNav ">
           <div id="burger-top"></div>
           <div id="burger-mid"></div>
           <div id="burger-bot"></div>
