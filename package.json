@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "axios": "^0.18.1",
+    "axios": "^0.21.1",
     "date-fns": "^2.4.1",
     "linkifyjs": "^2.1.8",
     "lodash": "^4.17.15",
